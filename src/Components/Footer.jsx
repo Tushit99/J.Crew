@@ -10,7 +10,8 @@ import {
     Image,
     Input,
     useColorModeValue,
-} from '@chakra-ui/react';
+} from '@chakra-ui/react'; 
+import Logo from "../Image/mylogo.png"; 
 
 
 const ListHeader = ({ children }) => {
@@ -88,13 +89,13 @@ export default function Footer() {
                         ml: 8,
                     }}>
                     <Image
-                        h={{ base: '80px', sm: '100px', lg: '290px' }} 
-                        w={{ base: '140px', sm: '180px', lg: '320px' }}
-                        src={'https://searchlogovector.com/wp-content/uploads/2021/11/jcrew-logo-vector.png'}
+                        h={{ base: '40px', sm: '50px', lg: '80px' }} 
+                        w={{ base: '120px', sm: '120px', lg: '260px' }}
+                        src={Logo}
                     /> 
                 </Flex>
-                <Text pt={6} fontSize={'sm'} textAlign={'center'}>
-                    © 2022 Chakra Templates. All rights reserved
+                <Text pt={6} fontSize={'sm'} ml={"100px"} textAlign={'left'}>
+                    © 2022 FashionHolic
                 </Text>
             </Box>
         </Box>

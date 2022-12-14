@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react' 
 import { Route, Routes } from 'react-router-dom'
+import Forboys from '../Pages/forboy/Forboys'
 import { Home } from '../Pages/index/Home'
 
 const AllRoute = () => {
-  return (
-    <Routes>
+  return ( 
+      <Routes> 
         <Route path='/' element={<Home />} />
-    </Routes>
+        <Route path='/forboys' element={<Forboys />} />
+      </Routes> 
   )
 }
 
