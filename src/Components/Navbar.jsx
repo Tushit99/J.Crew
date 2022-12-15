@@ -2,8 +2,7 @@ import {
   Box,
   Flex,
   Text,
-  IconButton,
-  Button,
+  IconButton, 
   Stack,
   Collapse,
   Icon,
@@ -95,7 +94,7 @@ export default function Navbar() {
               {back ? <SunIcon /> : <MoonIcon />}
             </button>
             <button>
-              <Link className="navlink">
+              <Link to="/cart" className="navlink">
                 <BsBag />
               </Link>
             </button>
@@ -116,7 +115,7 @@ const DesktopNav = () => {
   return (
     <Stack direction={"row"} spacing={2}>
       {NAV_ITEMS.map((navItem,i) => (
-        <Box key={i}>
+        <Box key={i}> 
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link to={navItem.to} className="navlink">
@@ -148,7 +147,7 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, to }) => {
+const DesktopSubNav = ({ label, to }) => { 
   return (
     <Link to={to} className="navlink">
       <Stack direction={"row"} align={"center"}>
@@ -249,15 +248,15 @@ const MobileNavItem = ({ label, children, to }) => {
 const NAV_ITEMS = [
   {
     label: "Gifts",
-    to: "/forboys",
+    to: "/",
     children: [
       {
         label: "For Men",
-        to: "/",
+        to: "/formen",
       },
       {
         label: "For Women",
-        to: "/",
+        to: "/forwomen",
       },
       {
         label: "For boys",
@@ -265,12 +264,8 @@ const NAV_ITEMS = [
       },
       {
         label: "For Girls",
-        to: "/",
-      },
-      {
-        label: "For Kids",
-        to: "/",
-      },
+        to: "/forgirl",
+      } 
     ],
   },
   {

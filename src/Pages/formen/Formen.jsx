@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
-import "./Forboy.css";
+import "./Formen.css";
 import { CircularProgress } from '@chakra-ui/react'
 
-const Forboys = () => {
+const Formen = () => {
   const [data, setData] = useState([]);
-  const [page, setpage] = useState(1);
+  const [page, setpage] = useState(1); 
   const [loading, setLoading] = useState(false);
   const [cart, setCart] = useState(true);
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(()=>{
-      async function detail(page) {
-        let res = await fetch(
-          `http://localhost:8080/forboys?_page=${page}&_limit=9`
-        );
-        let x = await res.json();
-        setData(x);
-      }
-      detail(page);
-    },1000)
+    async function detail(page) {
+      let res = await fetch(
+        `http://localhost:8080/formen?_page=${page}&_limit=9`
+      );
+      let x = await res.json();
+      setData(x);
+    }
+    detail(page);
     setLoading(false);
   }, [page]);
 
@@ -28,7 +26,7 @@ const Forboys = () => {
     setLoading(true);
     async function detail(z) {
       let res = await fetch(
-        `http://localhost:8080/forboys?_page=${page}&_limit=9`
+        `http://localhost:8080/formen?_page=${page}&_limit=9`
       );
       let x = await res.json();
       if (z == "asc") {
@@ -36,7 +34,7 @@ const Forboys = () => {
       }
       else if(z == "desc") {
         x = x.sort((a, b) => { return b.nprice - a.nprice })
-      } 
+      }
       console.log(x); 
       setData(x);
     }
@@ -60,7 +58,7 @@ const Forboys = () => {
     setLoading(true);
     async function detail() {
       let res = await fetch(
-        `http://localhost:8080/forboys?_page=${page}&_limit=9`
+        `http://localhost:8080/formen?_page=${page}&_limit=9`
       );
       let x = await res.json();
       x = x.sort((a, b) => { return b.rating - a.rating })
@@ -84,7 +82,7 @@ const Forboys = () => {
           Great holiday presents are part of our heritage. Here's our 2022
           take...{" "}
         </p>
-        <button className="top"> For Boys </button>
+        <button className="top"> For Mens </button>
       </div>
       <div className="sortbox">
         <select onChange={(e) => sorted(e.target.value)} >
@@ -110,9 +108,8 @@ const Forboys = () => {
                 onClick={() => {
                   timer(e);
                 }}
-              >
-                {" "}
-                Add to Cart{" "}
+              > 
+                Add to Cart
               </button>
             </div>
           ))
@@ -149,4 +146,4 @@ const Forboys = () => {
   );
 };
 
-export default Forboys;
+export default Formen;

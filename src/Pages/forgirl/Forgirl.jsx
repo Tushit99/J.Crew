@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
-import "./Forboy.css";
+import "./Forgirl.css";
 import { CircularProgress } from '@chakra-ui/react'
 
-const Forboys = () => {
+const Forgirl = () => {
   const [data, setData] = useState([]);
   const [page, setpage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -11,16 +11,14 @@ const Forboys = () => {
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(()=>{
-      async function detail(page) {
-        let res = await fetch(
-          `http://localhost:8080/forboys?_page=${page}&_limit=9`
-        );
-        let x = await res.json();
-        setData(x);
-      }
-      detail(page);
-    },1000)
+    async function detail(page) {
+      let res = await fetch(
+        `http://localhost:8080/forgirls?_page=${page}&_limit=9`
+      );
+      let x = await res.json();
+      setData(x);
+    }
+    detail(page);
     setLoading(false);
   }, [page]);
 
@@ -28,16 +26,16 @@ const Forboys = () => {
     setLoading(true);
     async function detail(z) {
       let res = await fetch(
-        `http://localhost:8080/forboys?_page=${page}&_limit=9`
+        `http://localhost:8080/forgirls?_page=${page}&_limit=9`
       );
       let x = await res.json();
       if (z == "asc") {
         x = x.sort((a, b) => { return a.nprice - b.nprice })
       }
-      else if(z == "desc") {
+      else if (z == "desc") {
         x = x.sort((a, b) => { return b.nprice - a.nprice })
-      } 
-      console.log(x); 
+      }
+      console.log(x);
       setData(x);
     }
     detail(sort);
@@ -60,7 +58,7 @@ const Forboys = () => {
     setLoading(true);
     async function detail() {
       let res = await fetch(
-        `http://localhost:8080/forboys?_page=${page}&_limit=9`
+        `http://localhost:8080/forgirls?_page=${page}&_limit=9`
       );
       let x = await res.json();
       x = x.sort((a, b) => { return b.rating - a.rating })
@@ -84,7 +82,7 @@ const Forboys = () => {
           Great holiday presents are part of our heritage. Here's our 2022
           take...{" "}
         </p>
-        <button className="top"> For Boys </button>
+        <button className="top"> For Mens </button>
       </div>
       <div className="sortbox">
         <select onChange={(e) => sorted(e.target.value)} >
@@ -97,8 +95,11 @@ const Forboys = () => {
       <div className="datalist">
         {loading ? (
           <div style={{ textAlign: "center" }}>
-            <CircularProgress isIndeterminate value={30} color='blue.400' size='200px' />
-          </div>) : (
+            <h1>
+              <CircularProgress value={30} isIndeterminate size='200px' />
+              Loading...
+            </h1>
+          </div>) : ( 
           data.map((e) => (
             <div key={e.id}>
               <img src={e.image} alt="err" />
@@ -149,4 +150,4 @@ const Forboys = () => {
   );
 };
 
-export default Forboys;
+export default Forgirl;
