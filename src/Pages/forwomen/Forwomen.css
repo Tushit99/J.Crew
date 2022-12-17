@@ -1,0 +1,158 @@
+.boytop {
+  background-image: url("https://www.jcrew.com/brand_creative/homepage2022/12-Dec/2022dec_1108_hp_w_gg_img0c.jpg");
+  height: 280px;
+  background-size: 100% 100%;
+  margin-bottom: 40px;
+  margin: auto;
+  text-align: center;
+}
+
+.boytop > h1 {
+  font-size: xxx-large;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+  text-align: center;
+}
+
+.boytop > p {
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.datalist {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 20px;
+}
+
+.datalist > div {
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+}
+
+.datalist h2,
+p {
+  text-align: left;
+}
+
+.top {
+  margin-top: 40px;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: black;
+  padding: 10px 30px;
+  border: 1px solid white; 
+  cursor:auto; 
+} 
+
+.datalist > div:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.but {
+  margin: 4px auto 0 auto;
+  text-align: center;
+  font-size: small;
+  padding: 8px 20px;
+  background-color: white;
+  border-radius: 0;
+  border: 1px solid black;
+}
+
+.sortbox{
+  padding: 10px 0 ;  
+  display: flex;  
+  justify-content: end;  
+  align-items: center; 
+}
+
+.sortbox>select{
+  border: 1px solid rgb(0, 0, 0);   
+  padding: 2px 8px;  
+  border-radius: 0px; 
+  margin: 0 6px;  
+}
+.sortbox>button{
+  border: 1px solid rgb(255, 255, 255); 
+  background-color: black; 
+  padding: 2px 14px; 
+  border-radius: 0px;
+  margin: 0 6px;  
+  color: white; 
+}
+
+.sortbox>button:hover{
+  border: 1px solid rgb(0, 0, 0); 
+  background-color: rgb(255, 255, 255);  
+  border-radius: 0px;
+  margin: 0 6px;  
+  color: rgb(0, 0, 0); 
+}
+
+
+.but:hover {
+  background-color: black;
+  color: rgb(255, 255, 255);
+}
+
+.datalist img {
+  width: 100%;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+}
+
+.cartadd{
+    position: fixed; 
+    background-color: rgba(250, 250, 250, 0.801);  
+    color: black; 
+    left: 45%;  
+    padding: 20px 50px; 
+    border-radius: 16px;  
+    border: 1px solid black;  
+    text-align: center; 
+}
+
+.cartadd2{
+    position: fixed; 
+    background-color: rgba(250, 250, 250, 0.801);  
+    color: black; 
+    display: none; 
+    left: 45%;  
+    padding: 20px 50px; 
+    border-radius: 16px;  
+    border: 1px solid black;  
+    text-align: center; 
+}
+
+
+@media all and (min-width: 600px) and (max-width: 900px) {
+  .boytop {
+    background-image: url("https://www.jcrew.com/brand_creative/homepage2022/12-Dec/2022dec_1108_hp_w_gg_img0m2.jpg");
+    height: 250px;
+  }
+  .datalist {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media all and (min-width: 400px) and (max-width: 600px) {
+  .datalist {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media all and (max-width: 400px) {
+  .datalist {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

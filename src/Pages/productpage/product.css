@@ -1,0 +1,82 @@
+.btn>button {
+    color: black;
+    border: 1px solid rgb(181, 181, 181);
+    font-size: small; 
+    background-color: rgb(255, 255, 255);
+    margin: 0px 6px ;  
+    position: sticky;
+}
+
+.btn>button:hover {
+    border: 1px solid black;  
+    background-color: black;
+    position: relative; 
+    color: white; 
+}  
+
+.bag:hover{
+    margin-top: 2px ; 
+}
+
+.bag {
+    width: 100%;
+    background-color: black;
+    font-weight: bolder;
+    font-family: sans-serif; 
+    border-radius: 0px;
+    color: white;
+    padding: 10px;
+} 
+
+.container {
+    display: flex;
+}
+
+.container>div:nth-child(1) {
+    flex: 7;
+    width: 100%;
+    padding: 20px;
+}
+
+.container>div:nth-child(2) {
+    flex: 5;
+    padding: 20px;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+.container-detail {
+    display: grid;
+    gap: 10px;
+}
+
+h4 {
+    width: 100%;
+}
+
+h4 select {
+    border: 1px solid black;
+    border-radius: 10px; 
+    background-color: white;
+    margin: 10px;
+    padding: 2px 10px;
+}
+
+.wht h2,h3,h4,p{
+    color: white; 
+}
+
+.bak h2,h3,h4,p{
+    color: black; 
+}
+
+
+@media all and (max-width: 880px) {
+    *{
+        font-size: small; 
+    }
+}
+

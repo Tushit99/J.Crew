@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Carousel from "./Carousel";
-// import Carousel from "./Carousel";
+import Carousel from "./Carousel"; 
 // import { Footer } from "../footer/footer"
 
 export const Home=()=>{
@@ -19,7 +18,7 @@ export const Home=()=>{
         <img src="https://www.jcrew.com/brand_creative/homepage2022/15-Dec4/2022dec2_1213_hp_w_img6.jpg" alt="j6" />
       </GridImgs>
       <Buttons>
-        <h1>Shop New Arrivals</h1>
+        <h1>Shop New Arrivals</h1> 
         <button>Shop Women</button>
         <button>Shop Men</button>
         <button>Shop Girls</button>
@@ -37,7 +36,7 @@ export const Home=()=>{
               src="https://www.jcrew.com/brand_creative/homepage2022/11-Nov/2022nov_1025_hp_w_img12.jpg"
               alt=""
             />
-            <p>Creative Spirits Series</p>
+            <p>Creative Spirits Series</p> 
             <h1>Marie Marot X J.Crew</h1>
             <button>Shop our collab</button>
           </div>
@@ -98,7 +97,7 @@ export const Home=()=>{
           </div>
         </div>
       </PinkDiv>
-      <Carousel />
+      <Carousel /> 
       <More>
         <h2>More you need to see</h2>
         <div className="card-con">

@@ -1,0 +1,19 @@
+
+.main{
+    display: flex; 
+    margin: 10px; 
+    background-color: rgb(255, 255, 255);
+}
+
+.d1{
+    /* flex: 7;  */
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.d2{ 
+    /* flex: 3; */
+    padding: 10px;
+    border: 1px solid black;
+}
+
