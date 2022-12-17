@@ -11,6 +11,7 @@ import {
     Input,
     useColorModeValue,
 } from '@chakra-ui/react'; 
+import "./Footer.css" 
 import Logo from "../Image/mylogo.png"; 
 
 
@@ -67,7 +68,8 @@ export default function Footer() {
                     </Stack>
                     <Stack align={'flex-start'}>
                         <ListHeader>Like Being First?</ListHeader>
-                        <Input borderColor='black.500' />
+                        {/* <Input borderColor='black.500' /> */}  
+                        <input type="text" className='inpt' />
                     </Stack>
                 </SimpleGrid>
             </Container>

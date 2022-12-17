@@ -2,7 +2,7 @@ import {
   Box,
   Flex,
   Text,
-  IconButton, 
+  IconButton,
   Stack,
   Collapse,
   Icon,
@@ -32,6 +32,7 @@ import { TheamContext } from "../Context/TheamContext";
 export default function Navbar() {
   const { back, change } = useContext(TheamContext);
   const { isOpen, onToggle } = useDisclosure();
+
 
   return (
     <div className={back ? "background" : "background2"}>
@@ -89,7 +90,9 @@ export default function Navbar() {
             direction={"row"}
             spacing={6}
           >
-            <button className="sign">Sign In</button>
+            <Link to="/signin">
+              <button className="sign" >Sign In</button>
+            </Link>
             <button onClick={change}>
               {back ? <SunIcon /> : <MoonIcon />}
             </button>
@@ -114,8 +117,8 @@ const DesktopNav = () => {
 
   return (
     <Stack direction={"row"} spacing={2}>
-      {NAV_ITEMS.map((navItem,i) => (
-        <Box key={i}> 
+      {NAV_ITEMS.map((navItem, i) => (
+        <Box key={i}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link to={navItem.to} className="navlink">
@@ -147,7 +150,7 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, to }) => { 
+const DesktopSubNav = ({ label, to }) => {
   return (
     <Link to={to} className="navlink">
       <Stack direction={"row"} align={"center"}>
@@ -265,7 +268,7 @@ const NAV_ITEMS = [
       {
         label: "For Girls",
         to: "/forgirl",
-      } 
+      }
     ],
   },
   {

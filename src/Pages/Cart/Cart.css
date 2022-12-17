@@ -1,11 +1,97 @@
-
-table th,td{
-    border: 1px solid black;
+.main {
+  display: flex;
+  padding: 10px;
+  margin: auto;
+  width: 100%; 
+  font-family: Arial, Helvetica, sans-serif; 
+  justify-content: center;
 }
 
-img{
-    width: 200px;
+.cart {
+  text-align: center;
+}
+.cart > div:nth-child(2) {
+  background-color: red;
+  font-weight: bold;
+  padding: 8px;
+  color: white;
 }
 
+.main > div:nth-child(1) {
+  flex: 7;
+  padding: 20px;
+}
 
+.main > div:nth-child(2) {
+  flex: 3;
+  padding: 20px;
+}
 
+table th,
+td {
+  border: 2px solid rgb(234, 234, 234);
+  text-align: left; 
+  max-width: 200px; 
+  border-radius: 10px;
+} 
+
+table {
+  width: 100%;
+}
+
+.main img{
+  width: 300px;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.box2 {
+  text-align: left;
+}
+
+.del:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.box2 > * {
+  margin: 8px 0;
+}
+
+.box2 button {
+  width: 100%;
+  border-radius: 0px;
+  background-color: black;
+  color: white;
+  padding: 6px;
+  font-weight: bold;
+  font-size: large;
+}
+
+table h3 {
+  font-weight: bold;
+}
+
+.bottomtotal {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: aliceblue;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  font-size: large;
+}
+
+@media all and (max-width: 920px) {
+  .main > div:nth-child(2) {
+    display: none;
+  }
+
+  .bottomtotal {
+    display: flex;
+  }
+}

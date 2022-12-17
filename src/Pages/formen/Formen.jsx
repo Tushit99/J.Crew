@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import "./Formen.css";
 import { CircularProgress } from '@chakra-ui/react'
+import { Link } from "react-router-dom";
 
 const Formen = () => {
   const [data, setData] = useState([]);
@@ -29,10 +30,10 @@ const Formen = () => {
         `http://localhost:8080/formen?_page=${page}&_limit=9`
       );
       let x = await res.json();
-      if (z == "asc") {
+      if (z === "asc") {
         x = x.sort((a, b) => { return a.nprice - b.nprice })
       }
-      else if(z == "desc") {
+      else if(z === "desc") {
         x = x.sort((a, b) => { return b.nprice - a.nprice })
       }
       console.log(x); 
@@ -52,7 +53,7 @@ const Formen = () => {
     setTimeout(() => {
       setCart(true);
     }, 1000);
-  }
+  } 
 
   const rating = () => {
     setLoading(true);
@@ -98,7 +99,7 @@ const Formen = () => {
             <CircularProgress isIndeterminate value={30} color='blue.400' size='200px' />
           </div>) : (
           data.map((e) => (
-            <div key={e.id}>
+            <Link to={`/formen/formen/${e.id}`} key={e.id}>
               <img src={e.image} alt="err" />
               <h2> {e.name} </h2>
               <p> Rating: {e.rating} </p>
@@ -111,7 +112,7 @@ const Formen = () => {
               > 
                 Add to Cart
               </button>
-            </div>
+            </Link>
           ))
         )}
       </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import "./Forgirl.css";
 import { CircularProgress } from '@chakra-ui/react'
+import { Link } from "react-router-dom";
 
 const Forgirl = () => {
   const [data, setData] = useState([]);
@@ -29,10 +30,10 @@ const Forgirl = () => {
         `http://localhost:8080/forgirls?_page=${page}&_limit=9`
       );
       let x = await res.json();
-      if (z == "asc") {
+      if (z === "asc") {
         x = x.sort((a, b) => { return a.nprice - b.nprice })
       }
-      else if (z == "desc") {
+      else if (z === "desc") {
         x = x.sort((a, b) => { return b.nprice - a.nprice })
       }
       console.log(x);
@@ -47,7 +48,7 @@ const Forgirl = () => {
   function timer(e) {
     setCart(false);
     let num = JSON.parse(localStorage.getItem("cart2")) || [];
-    num.push(e);
+    num.push(e); 
     localStorage.setItem("cart2", JSON.stringify(num));
     setTimeout(() => {
       setCart(true);
@@ -82,7 +83,7 @@ const Forgirl = () => {
           Great holiday presents are part of our heritage. Here's our 2022
           take...{" "}
         </p>
-        <button className="top"> For Mens </button>
+        <button className="top"> For Girls </button>
       </div>
       <div className="sortbox">
         <select onChange={(e) => sorted(e.target.value)} >
@@ -101,7 +102,7 @@ const Forgirl = () => {
             </h1>
           </div>) : ( 
           data.map((e) => (
-            <div key={e.id}>
+            <Link to={`/forgirl/forgirl/${e.id}`} key={e.id}>
               <img src={e.image} alt="err" />
               <h2> {e.name} </h2>
               <p> Rating: {e.rating} </p>
@@ -115,7 +116,7 @@ const Forgirl = () => {
                 {" "}
                 Add to Cart{" "}
               </button>
-            </div>
+            </Link>
           ))
         )}
       </div>

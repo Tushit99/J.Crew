@@ -1,0 +1,19 @@
+
+.hr{
+    margin: 40px 0 20px 0;
+    border-top : 1px dashed rgb(212, 212, 212);  
+    letter-spacing: 5px;
+}
+
+.wrong{
+    background-color: rgba(214, 214, 214, 0.381); 
+    text-align: center; 
+    width: 250px; 
+    position: fixed;
+    border-radius: 20px; 
+    padding: 10px 0; 
+    left: 40%;  
+    top: 100px; 
+    margin: auto; 
+} 
+
