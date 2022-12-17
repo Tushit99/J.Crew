@@ -65,9 +65,9 @@ const Forgirl = () => {
       x = x.sort((a, b) => { return b.rating - a.rating })
       console.log(x);
       setData(x);
+      setLoading(false);
     }
     detail();
-    setLoading(false);
   }
 
   return (

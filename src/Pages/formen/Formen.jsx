@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Formen = () => {
   const [data, setData] = useState([]);
-  const [page, setpage] = useState(1); 
+  const [page, setpage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [cart, setCart] = useState(true);
 
@@ -33,10 +33,10 @@ const Formen = () => {
       if (z === "asc") {
         x = x.sort((a, b) => { return a.nprice - b.nprice })
       }
-      else if(z === "desc") {
+      else if (z === "desc") {
         x = x.sort((a, b) => { return b.nprice - a.nprice })
       }
-      console.log(x); 
+      console.log(x);
       setData(x);
     }
     detail(sort);
@@ -53,7 +53,7 @@ const Formen = () => {
     setTimeout(() => {
       setCart(true);
     }, 1000);
-  } 
+  }
 
   const rating = () => {
     setLoading(true);
@@ -65,14 +65,13 @@ const Formen = () => {
       x = x.sort((a, b) => { return b.rating - a.rating })
       console.log(x);
       setData(x);
+      setLoading(false);
     }
     detail();
-    setLoading(false);
   }
 
   return (
-    <div>
-      {/* add to cart */}
+    <div> 
       <div className={cart ? "cartadd2" : "cartadd"}>
         <h1> Product Added to cart </h1>
       </div>
@@ -109,7 +108,7 @@ const Formen = () => {
                 onClick={() => {
                   timer(e);
                 }}
-              > 
+              >
                 Add to Cart
               </button>
             </Link>
