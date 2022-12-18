@@ -1,13 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { TheamContext } from "../../Context/TheamContext";
-import "./product.css";
+import prod from "./product.module.css";
 
 export const Product = () => {
   const { name, id } = useParams({});
   const [product, setProduct] = useState({});
   const [cart, setCart] = useState(true);
-  const {back} = useContext(TheamContext); 
+  const { back } = useContext(TheamContext);
 
   useEffect(() => {
     async function getData() {
@@ -16,7 +16,7 @@ export const Product = () => {
       );
       setProduct(data);
     }
-    getData(); 
+    getData();
   }, []);
 
 
@@ -28,32 +28,32 @@ export const Product = () => {
     setTimeout(() => {
       setCart(true);
     }, 1000);
-  } 
+  }
 
   console.log(product);
   console.log(id, name);
 
-  return ( 
-    <div className={back ? "wht" : "bak"}>
-      <div className={cart ? "cartadd2" : "cartadd"}>
+  return (
+    <div className={back ? `${prod.wht}` : `${prod.bak}`}>
+      <div className={cart ? `${prod.cartadd2}` : `${prod.cartadd}`}>
         <h1> Product Added to cart </h1>
       </div>
-      <div className="container">
-        <div className="container-img">
+      <div className={prod.container}>
+        <div className={prod.container}>
           <img
             src={product.image}
-            className="pro-img"
-            alt="some-thing-went-wrong"
+            className={prod.imgs}
+            alt="some-thing-went-wrong" 
           />
         </div>
-        <div className="container-detail">
+        <div className={prod.containerdetail}>
           <h2> {product.name} </h2>
           <h5> {product.item} </h5>
           <h3>Price:{product.price}</h3>
           <br />
           <h4> Size: Select a Size </h4>
           <h3> All sizes are US size </h3>
-          <div className="btn">
+          <div className={prod.btn}>
             <button> Small</button>
             <button> Medium </button>
             <button> Large </button>
@@ -62,13 +62,13 @@ export const Product = () => {
           </div>
           <h4>
             Quantity :
-            <select> 
+            <select>
               <option value="1">1</option>
               <option value="2">2</option>
             </select>
           </h4>
           <button
-            className="bag"
+            className={prod.bag}
             onClick={() => {
               timer(product);
             }}
@@ -76,11 +76,11 @@ export const Product = () => {
             {" "}
             ADD TO BAG{" "}
           </button>
-          <hr className="hr" />
+          <hr className={prod.hr} />
           <h4> Prices include duties and taxes </h4>
           <div> </div>
           <h2> Product Details </h2>
-          <div className="text"> {product.productdescription} </div>
+          <div className={prod.text}> {product.productdescription} </div>
           <ul>
             <li> Cotton.</li>
             <li> Short sleeves. </li>
@@ -92,12 +92,12 @@ export const Product = () => {
             <li> Item AV961. </li>
           </ul>
           <h3> Our Fabrics, Re-imagined </h3>
-          <h4 className="fab">
+          <h4 className={prod.fab}>
             {" "}
             This item contains a sustainable material, like organic cotton,
             recycled polyester, or with certifications like Fair Trade.{" "}
           </h4>
-          <hr className="hr" />
+          <hr className={prod.hr} />
         </div>
       </div>
     </div>

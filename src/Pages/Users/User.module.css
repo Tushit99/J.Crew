@@ -1,0 +1,112 @@
+.userhead{
+    display: flex;    
+    gap: 20px; 
+    padding: 20px ; 
+    align-items: flex-start; 
+    justify-content: space-around;
+}
+
+.main1{
+    flex: 2; 
+    display: grid;   
+    gap: 10px;
+    grid-template-columns: repeat(1,1fr); 
+}
+
+.main1>input,textarea{
+    padding: 2px 6px;   
+    outline: 0; 
+    border-radius: 4px; 
+    border: 2px solid rgb(230, 230, 230); 
+}
+
+.main2{
+    flex: 4; 
+}
+
+.point{
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;  
+    padding: 10px ;  
+    background-color: rgb(200, 200, 255); 
+}
+
+.point>button{ 
+    padding: 6px 20px;  
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+    background-color: black;  
+    color: white; 
+}
+
+.append2{
+    display: grid; 
+    gap: 14px; 
+    padding: 10px; 
+    grid-template-columns: repeat(2,50%); 
+}
+
+.append2>div{
+    border: 2px solid black; 
+    width: 100%;  
+}
+
+.append2>div>img{
+    width: 100%; 
+}
+
+.adding{
+    background-color: black; 
+    color: white; 
+    width: 100%; 
+    padding: 6px 10px; 
+}
+
+
+@media (min-width:500px) and (max-width: 900px) {
+    .userhead{
+        display: grid; 
+        margin: auto; 
+        width: 100%; 
+    }  
+    .append2{
+        grid-template-columns: repeat(1,1fr); 
+    }
+    .append2>div{
+        width: 100% ; 
+    }
+    .append2 img{
+        width: 100%; 
+    }
+
+}
+
+
+@media (min-width:100px) and (max-width: 500px) {
+    .append2>div{
+        width: 200px ; 
+        margin: auto;  
+    }
+    .userhead{
+        display: grid; 
+        margin: auto; 
+        width: 100%; 
+    }  
+    .append2{
+        grid-template-columns: repeat(1,1fr); 
+    }
+    .append2 img{
+        width: 100%; 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

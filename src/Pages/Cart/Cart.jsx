@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import "./Cart.css";
+import Cartmod from "./Cart.module.css";
 
 const Cart = () => {
   const [data, setData] = useState([]);
@@ -40,12 +40,14 @@ const Cart = () => {
   console.log(data);
 
   return (
-    <div className="cart">
+    <div className={Cartmod.cart}>
       <h4> Have a question? We can help. </h4>
       <div>
         <h4> Unfortunately, your order will not arrive by 12/24. </h4>
       </div>
-      <div className="main">
+      <div
+       className={Cartmod.main}
+       >
         <div>
           <table>
             <tr>
@@ -70,7 +72,7 @@ const Cart = () => {
                   <h4> Item: {e.item} </h4>
                   <h4> Rating: {e.rating} </h4>
                   <button
-                    className="del"
+                    className={Cartmod.del}
                     onClick={() => {
                       handleDelete(i);
                     }}
@@ -84,7 +86,9 @@ const Cart = () => {
             ))}
           </table>
         </div>
-        <div className="box2">
+        <div 
+        className={Cartmod.box2}
+        >
           <table>
             <tr>
               <th>Item Subtotal</th>
@@ -100,7 +104,9 @@ const Cart = () => {
             </tr>
           </table>
           <p> Shipping calculated in Checkout </p>
-          <button className="paybutt" onClick={HandlePayment}>
+          <button 
+          className={Cartmod.paybutt} 
+          onClick={HandlePayment}>
             
             <Link to="/payment"> CHECKOUT </Link>
           </button>
@@ -113,9 +119,11 @@ const Cart = () => {
           </p>
         </div>
       </div>
-      <div className="bottomtotal">
+      <div 
+      className={Cartmod.bottomtotal}
+      >
         <h2>Total:₹{price == 0 ? 0 : `${price + 100}`}</h2>
-        <button className="paybutt" onClick={HandlePayment}>
+        <button className={Cartmod.paybutt} onClick={HandlePayment}>
             <Link to="/payment"> CHECKOUT </Link>
           </button>
       </div>

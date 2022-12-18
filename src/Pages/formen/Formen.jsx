@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
-import "./Formen.css";
+import mens from "./Formen.module.css";
 import { CircularProgress } from '@chakra-ui/react'
 import { Link } from "react-router-dom";
 
 const Formen = () => {
   const [data, setData] = useState([]);
   const [page, setpage] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const [cart, setCart] = useState(true);
+  const [loading, setLoading] = useState(false); 
 
   useEffect(() => {
     setLoading(true);
@@ -45,16 +44,6 @@ const Formen = () => {
 
   console.log(data);
 
-  function timer(e) {
-    setCart(false);
-    let num = JSON.parse(localStorage.getItem("cart2")) || [];
-    num.push(e);
-    localStorage.setItem("cart2", JSON.stringify(num));
-    setTimeout(() => {
-      setCart(true);
-    }, 1000);
-  }
-
   const rating = () => {
     setLoading(true);
     async function detail() {
@@ -72,19 +61,16 @@ const Formen = () => {
 
   return (
     <div> 
-      <div className={cart ? "cartadd2" : "cartadd"}>
-        <h1> Product Added to cart </h1>
-      </div>
-      <div className="boytop">
+      <div className={mens.boytop}>
         <h1> The Gift Guide </h1>
         <p>
           {" "}
           Great holiday presents are part of our heritage. Here's our 2022
           take...{" "}
         </p>
-        <button className="top"> For Mens </button>
+        <button className={mens.top}> For Mens </button>
       </div>
-      <div className="sortbox">
+      <div className={mens.sortbox}>
         <select onChange={(e) => sorted(e.target.value)} >
           <option value="">--</option>
           <option value="asc"> Low to High </option>
@@ -92,7 +78,7 @@ const Formen = () => {
         </select>
         <button onClick={() => rating()}> Top Rated </button>
       </div>
-      <div className="datalist">
+      <div className={mens.datalist}>
         {loading ? (
           <div style={{ textAlign: "center" }}>
             <CircularProgress isIndeterminate value={30} color='blue.400' size='200px' />
@@ -103,21 +89,13 @@ const Formen = () => {
               <h2> {e.name} </h2>
               <p> Rating: {e.rating} </p>
               <p> Price: ₹{e.nprice} </p>
-              <button
-                className="but"
-                onClick={() => {
-                  timer(e);
-                }}
-              >
-                Add to Cart
-              </button>
             </Link>
           ))
         )}
       </div>
-      <div className="pagination">
+      <div className={mens.pagination}>
         <button
-          className="but"
+          className={mens.but}
           disabled={page === 1}
           onClick={() => {
             setpage((p) => {
@@ -125,12 +103,12 @@ const Formen = () => {
             });
           }}
         >
-          {" "}
+          {" "} 
           <ArrowLeftIcon /> PREV{" "}
         </button>
         <button> {page} </button>
         <button
-          className="but"
+          className={mens.but}
           disabled={page === 3}
           onClick={() => {
             setpage((p) => {
