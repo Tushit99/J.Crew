@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
-import "./Forboy.css";
+import boys from "./Forboy.module.css";
 import { CircularProgress } from '@chakra-ui/react'
 import { Link } from "react-router-dom";
 
@@ -58,25 +58,25 @@ const Forboys = () => {
       x = x.sort((a, b) => { return b.rating - a.rating })
       console.log(x);
       setData(x);
+      setLoading(false);
     }
     detail();
-    setLoading(false);
   }
 
   return (
     <div>
       {/* add to cart */}
      
-      <div className="boytop">
+      <div className={boys.boytop}>
         <h1> The Gift Guide </h1>
         <p>
           {" "}
           Great holiday presents are part of our heritage. Here's our 2022
           take...{" "}
         </p>
-        <button className="top"> For Boys </button>
+        <button className={boys.top}> For Boys </button>
       </div>
-      <div className="sortbox">
+      <div className={boys.sortbox}>
         <select onChange={(e) => sorted(e.target.value)} >
           <option value="">--</option>
           <option value="asc"> Low to High </option>
@@ -84,7 +84,7 @@ const Forboys = () => {
         </select>
         <button onClick={() => rating()}> Top Rated </button>
       </div>  
-      <div className="datalist"> 
+      <div className={boys.datalist}> 
         {loading ? (  
           <div style={{ textAlign: "center" }}>
             <CircularProgress isIndeterminate value={30} color='blue.400' size='200px' />
@@ -99,9 +99,9 @@ const Forboys = () => {
           ))
         )}
       </div>
-      <div className="pagination">
+      <div className={boys.pagination}>
         <button
-          className="but"
+          className={boys.but}
           disabled={page === 1}
           onClick={() => {
             setpage((p) => {
@@ -114,7 +114,7 @@ const Forboys = () => {
         </button>
         <button> {page} </button>
         <button
-          className="but"
+          className={boys.but}
           disabled={page === 3}
           onClick={() => {
             setpage((p) => {

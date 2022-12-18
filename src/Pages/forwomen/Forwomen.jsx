@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
-import "./Forwomen.css";
+import women from "./Forwomen.module.css";
 import { CircularProgress } from '@chakra-ui/react'
 import { Link } from "react-router-dom";
 
 const Forwomen = () => {
   const [data, setData] = useState([]);
   const [page, setpage] = useState(1); 
-  const [loading, setLoading] = useState(false);
-  const [cart, setCart] = useState(true);
+  const [loading, setLoading] = useState(false); 
 
   useEffect(() => {
     setLoading(true);
@@ -45,16 +44,6 @@ const Forwomen = () => {
 
   console.log(data);
 
-  function timer(e) {
-    setCart(false);
-    let num = JSON.parse(localStorage.getItem("cart2")) || [];
-    num.push(e);
-    localStorage.setItem("cart2", JSON.stringify(num));
-    setTimeout(() => {
-      setCart(true);
-    }, 1000);
-  }
-
   const rating = () => {
     setLoading(true);
     async function detail() {
@@ -65,27 +54,24 @@ const Forwomen = () => {
       x = x.sort((a, b) => { return b.rating - a.rating })
       console.log(x);
       setData(x);
+      setLoading(false);
     }
     detail();
-    setLoading(false);
   }
 
   return (
     <div>
-      {/* add to cart */}
-      <div className={cart ? "cartadd2" : "cartadd"}>
-        <h1> Product Added to cart </h1>
-      </div>
-      <div className="boytop">
+      {/* add to cart */} 
+      <div className={women.boytop}>
         <h1> The Gift Guide </h1>
         <p>
           {" "}
           Great holiday presents are part of our heritage. Here's our 2022
           take...{" "}
         </p>
-        <button className="top"> For Women </button>
+        <button className={women.top}> For Women </button>
       </div>
-      <div className="sortbox">
+      <div className={women.sortbox}>
         <select onChange={(e) => sorted(e.target.value)} >
           <option value="">--</option>
           <option value="asc"> Low to High </option>
@@ -93,7 +79,7 @@ const Forwomen = () => {
         </select>
         <button onClick={() => rating()}> Top Rated </button>
       </div>
-      <div className="datalist">
+      <div className={women.datalist}>
         {loading ? (
           <div style={{ textAlign: "center" }}>
             <CircularProgress isIndeterminate value={30} color='blue.400' size='200px' />
@@ -103,23 +89,14 @@ const Forwomen = () => {
               <img src={e.image} alt="err" />
               <h2> {e.name} </h2>
               <p> Rating: {e.rating} </p>
-              <p> Price: ₹{e.nprice} </p>
-              <button
-                className="but"
-                onClick={() => {
-                  timer(e);
-                }}
-              >
-                {" "}
-                Add to Cart{" "}
-              </button>
+              <p> Price: ₹{e.nprice} </p> 
             </Link>
           ))
         )}
       </div>
-      <div className="pagination">
+      <div className={women.pagination}>
         <button
-          className="but"
+          className={women.but}
           disabled={page === 1}
           onClick={() => {
             setpage((p) => {
@@ -132,7 +109,7 @@ const Forwomen = () => {
         </button>
         <button> {page} </button>
         <button
-          className="but"
+          className={women.but}
           disabled={page === 3}
           onClick={() => {
             setpage((p) => {

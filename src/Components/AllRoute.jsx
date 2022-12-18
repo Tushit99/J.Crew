@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Cart from "../Pages/Cart/Cart";
+import ErrorPage from "../Pages/Error/ErrorPage";
 import Forboys from "../Pages/forboy/Forboys";
 import Forgirl from "../Pages/forgirl/Forgirl";
 import Formen from "../Pages/formen/Formen";
@@ -10,6 +11,7 @@ import Payment from "../Pages/Payment/Payment";
 import { Product } from "../Pages/productpage/Productdetail";
 import Signin from "../Pages/Signup/Signin";
 import Signup from "../Pages/Signup/Signup";
+import User from "../Pages/Users/User";
 import PrivateRoute from "./PrivateRoute";
 
 const AllRoute = () => {
@@ -23,8 +25,10 @@ const AllRoute = () => {
       <Route path="/cart" element={<Cart />} />
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<Signup />} /> 
-      <Route path="/payment" element={<Payment />} />
-      {/*  */}
+      <Route path="/payment" element={<Payment />} /> 
+      <Route path="/user" element={<User/>} />   
+      <Route path="*" element={<ErrorPage />} />
+      {/*  */} 
       <Route
         path="/forboys/:name/:id"
         element={
