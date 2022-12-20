@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
-import TheamContextProvider from "./Context/TheamContext";
 import { BrowserRouter } from "react-router-dom";
 import AuthContextProvider from "./Context/AuthContext";
 
@@ -11,10 +10,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <ChakraProvider>
-      <AuthContextProvider>
-        <TheamContextProvider>
-          <App />
-        </TheamContextProvider>
+      <AuthContextProvider> 
+          <App /> 
       </AuthContextProvider>
     </ChakraProvider>
   </BrowserRouter>

@@ -1,7 +1,7 @@
 .boytop {
   background-image: url("https://www.jcrew.com/brand_creative/homepage2022/12-Dec/2022dec_1108_hp_w_gg_img0c.jpg");
   height: 280px;
-  background-size: 100% 100%;
+  background-size: 100% 100%;  
   margin-bottom: 40px;
   margin: auto;
   text-align: center;
@@ -23,30 +23,29 @@
 .datalist {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  background-color: rgb(255, 255, 255);
+  gap: 10px;   
   padding: 10px 20px;
 }
 
-.datalist > div {
+.da3{ 
   padding: 10px;
   text-align: center;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(205, 205, 205, 0.281);
   margin: auto;
 }
 
-.datalist h2,
-p {
-  text-align: left;
+.datalist h2,p{
+  text-align: left; 
+  color: unset; 
 }
 
 .top {
   margin-top: 40px;
   font-family: Arial, sans-serif;
-  color: white;
-  background-color: black;
+  color: white; 
+  background-color: black; 
   padding: 10px 30px;
-  border: 1px solid white; 
+  border: 1px solid white;  
   cursor:auto; 
 } 
 
@@ -59,9 +58,13 @@ p {
   text-align: center;
   font-size: small;
   padding: 8px 20px;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 0;
   border: 1px solid black;
+}
+
+.p{
+  color: unset; 
 }
 
 .sortbox{

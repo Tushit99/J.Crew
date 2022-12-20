@@ -16,7 +16,7 @@ import PrivateRoute from "./PrivateRoute";
 
 const AllRoute = () => {
   return (
-    <Routes>
+    <Routes> 
       <Route path="/" element={<Home />} />
       <Route path="/forboys" element={<Forboys />} />
       <Route path="/formen" element={<Formen />} />

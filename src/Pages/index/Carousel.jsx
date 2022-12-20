@@ -70,8 +70,8 @@ const Carousel = () => {
       <h1 className="cHead">Shop our Instagram</h1>
       <h3 className="cH2">(and join the fun with #injcrew)</h3>
       <Slider {...carouselProperties}>
-        {SliderData.map((item) => (
-          <Card item={item} />
+        {SliderData.map((item,i) => (
+          <Card item={item} key={i} />
         ))}
       </Slider>
     </div>

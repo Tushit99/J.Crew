@@ -2,20 +2,17 @@ import React, { useContext } from "react";
 import "./App.css"
 import AllRoute from "./Components/AllRoute";
 import Footer from "./Components/Footer";
-import Navbar from "./Components/Navbar";
-import { TheamContext } from "./Context/TheamContext";
+import Navbar from "./Components/Navbar"; 
 
-function App() { 
-  const {back} = useContext(TheamContext); 
-
+function App() {   
   return (
     <div className="App">  
       <Navbar />
-      <div className={back ? "appnav" : "appnav2"}>
+      <div className="allrout">
         <AllRoute /> 
       </div>
       <hr className="horizontal"  />
-        <Footer back={back} /> 
+        <Footer /> 
     </div>
   );
 }

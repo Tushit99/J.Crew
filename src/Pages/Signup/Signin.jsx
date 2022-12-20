@@ -20,7 +20,7 @@ export default function Signin() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [alert, setAlert] = useState(false);
-  const nav = useNavigate(); 
+  const nav = useNavigate();  
 
   useEffect(() => {
     async function detail() {
@@ -31,19 +31,24 @@ export default function Signin() {
     detail(); 
   }, []);
 
-  const handleCheck = () => {
+  const handleCheck = () => { 
     let num = false; 
+    let myfullname = ""; 
     if(email=="tushit@gmail.com"){
+      myfullname = "Tushit99";
+      localStorage.setItem("myname",myfullname); 
       return nav("/user")
     }
     data.map((e) => {
       if (e.email == email && e.password == pass) {
-        num = true;
+        num = true; 
+        myfullname = e.first_name; 
         return true;
       }
     });
     if (num == true) {
-      return <Navigate to="/" />;
+      localStorage.setItem("myname",myfullname); 
+      return nav("/");
     } else {
       setAlert(true);
       setTimeout(() => {
