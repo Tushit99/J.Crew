@@ -11,33 +11,43 @@
   text-align: center;
 }
 .cart > div:nth-child(2) {
-  background-color: red;
+  background-color: red; 
   font-weight: bold;
-  padding: 8px;
-  color: white;
-}
+  padding: 8px; 
+  color: unset; 
+} 
 
 .main > div:nth-child(1) {
   flex: 7;
+  color: unset; 
   padding: 20px;
 }
 
 .main > div:nth-child(2) {
   flex: 3;
   padding: 20px;
+  color: unset; 
 }
 
-table th,
-td {
+table th{
   border: 2px solid rgb(234, 234, 234);
   text-align: left; 
+  color: unset; 
+  max-width: 200px; 
+  border-radius: 10px;
+} 
+
+table td{
+  border: 2px solid rgb(234, 234, 234);
+  text-align: left; 
+  color: unset; 
   max-width: 200px; 
   border-radius: 10px;
 } 
 
 table {
   width: 100%;
-}
+} 
 
 .main img{
   width: 300px;
@@ -64,23 +74,31 @@ h3 {
   width: 100%;
   border-radius: 0px;
   background-color: black;
-  color: white;
+  color: white; 
   padding: 6px;
   font-weight: bold;
   font-size: large;
 }
 
-.paybutt2{ 
-  border-radius: 0px;
-  background-color: rgb(0, 0, 0);
-  color: white;
-  padding: 6px 14px; 
-  font-weight: bold;
-  font-size: large;
+.h3{
+  color: unset; 
+}
+
+.h2{
+  color: unset; 
+}
+
+.p{
+  color: unset; 
+}
+
+.col{
+  color: unset; 
 }
 
 table h3 {
   font-weight: bold;
+  color: unset; 
 }
 
 .bottomtotal {

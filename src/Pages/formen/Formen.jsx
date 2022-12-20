@@ -61,12 +61,11 @@ const Formen = () => {
 
   return (
     <div> 
-      <div className={mens.boytop}>
+      <div className={mens.boytop}> 
         <h1> The Gift Guide </h1>
         <p>
-          {" "}
           Great holiday presents are part of our heritage. Here's our 2022
-          take...{" "}
+          take...
         </p>
         <button className={mens.top}> For Mens </button>
       </div>
@@ -78,17 +77,17 @@ const Formen = () => {
         </select>
         <button onClick={() => rating()}> Top Rated </button>
       </div>
-      <div className={mens.datalist}>
+      <div className={mens.datalist}> 
         {loading ? (
           <div style={{ textAlign: "center" }}>
             <CircularProgress isIndeterminate value={30} color='blue.400' size='200px' />
           </div>) : (
           data.map((e) => (
-            <Link to={`/formen/formen/${e.id}`} key={e.id}>
+            <Link to={`/formen/formen/${e.id}`} className={mens.da3} key={e.id}>
               <img src={e.image} alt="err" />
               <h2> {e.name} </h2>
-              <p> Rating: {e.rating} </p>
-              <p> Price: ₹{e.nprice} </p>
+              <p className={mens.p}> Rating: {e.rating} </p>
+              <p className={mens.p}> Price: ₹{e.nprice} </p>
             </Link>
           ))
         )}
@@ -102,9 +101,8 @@ const Formen = () => {
               return p - 1;
             });
           }}
-        >
-          {" "} 
-          <ArrowLeftIcon /> PREV{" "}
+        > 
+          <ArrowLeftIcon /> PREV  
         </button>
         <button> {page} </button>
         <button
@@ -115,9 +113,8 @@ const Formen = () => {
               return p + 1;
             });
           }}
-        >
-          {" "}
-          NEXT <ArrowRightIcon />{" "}
+        > 
+          NEXT <ArrowRightIcon />  
         </button>
       </div>
     </div>

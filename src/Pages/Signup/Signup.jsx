@@ -16,7 +16,7 @@ import {
 import { useState } from 'react';
 import "./Signin.css"
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; 
 
 export default function Signup() {
     const [showPassword, setShowPassword] = useState(false);
@@ -25,6 +25,7 @@ export default function Signup() {
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
     const [alert, setAlert] = useState(false);   
+    const nav = useNavigate()
 
     const handleSubmit = async () => {
         let a = first;
@@ -51,7 +52,8 @@ export default function Signup() {
                     body: JSON.stringify(obj),
                     headers: { "Content-Type": "application/json", }
                 })
-            let data = await res.json();
+            let data = await res.json(); 
+            nav("/signin")
         } 
     }
 

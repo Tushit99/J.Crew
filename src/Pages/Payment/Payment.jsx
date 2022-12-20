@@ -17,8 +17,8 @@ const Payment = () => {
         localStorage.parse("cart2",JSON.stringify({})); 
         setTimeout(()=>{  
             setBox(false);  
-        },2000) 
-        nav("/"); 
+            nav("/"); 
+        },2000)  
     }
 
     return ( 

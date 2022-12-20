@@ -10,8 +10,9 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  // useBreakpointValue,
+  useColorMode,
   Image,
+  Button, 
   useDisclosure,
 } from "@chakra-ui/react";
 import "../App.css";
@@ -22,23 +23,27 @@ import {
   SunIcon,
   MoonIcon,
 } from "@chakra-ui/icons";
-import Logo from "../Image/mylogo.png";
-import Logo2 from "../Image/mylogo2.png";
+import Logo from "../Image/mylogo.png"; 
+import Logo2 from "../Image/mylogo2.png";  
 import { BsBag } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { TheamContext } from "../Context/TheamContext";
+import { useEffect, useState } from "react";
 
-export default function Navbar() {
-  const { back, change } = useContext(TheamContext);
+export default function Navbar() { 
+  const { colorMode, toggleColorMode } = useColorMode()
   const { isOpen, onToggle } = useDisclosure();
+  const [info, setInfo] = useState("");
+
+  useEffect(() => {
+    let res = localStorage.getItem("myname") || "";
+    setInfo(res);
+  }, []) 
 
 
   return (
-    <div className={back ? "background" : "background2"}>
-      <Box position={"fixed"} top={"0px"} left={"0px"} right={"0px"}>
-        <Flex
-          color={useColorModeValue("gray.600", "white")}
+    <div>
+      <Box position={"fixed"} top={"0px"} left={"0px"} right={"0px"} bg={colorMode === 'light' ? "white" : "rgb(26,32,44)"  } >
+        <Flex 
           minH={"50px"}
           px={{ base: 4 }}
           borderBottom={0}
@@ -56,7 +61,7 @@ export default function Navbar() {
               icon={
                 isOpen ? (
                   <CloseIcon w={3} h={3} />
-                ) : (
+                ) : ( 
                   <HamburgerIcon w={5} h={5} />
                 )
               }
@@ -71,15 +76,15 @@ export default function Navbar() {
             justify={{ base: "center", md: "start" }}
           >
             <Link className="navlink" to="/">
-              <Image
-                w={{ sm: "80px", lg: "100px", xl: "140px" }}
-                src={back ? Logo2 : Logo}
+              <Image 
+                w={{ sm: "80px", lg: "100px", xl: "140px" }} 
+                src={colorMode === 'light' ? `${Logo}`: `${Logo2}`} 
                 alt={"logoIMG"}
               />
             </Link>
 
             <Flex display={{ base: "none", md: "flex" }} ml={10}>
-              <DesktopNav back={back} />
+              <DesktopNav />
             </Flex>
           </Flex>
 
@@ -91,11 +96,11 @@ export default function Navbar() {
             spacing={6}
           >
             <Link to="/signin">
-              <button className="sign" >Sign In</button>
+              <button className="sign" > {info == "" ? "Sign In" : info} </button>
             </Link>
-            <button onClick={change}>
-              {back ? <SunIcon /> : <MoonIcon />}
-            </button>
+            <Button onClick={toggleColorMode}> 
+             {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
+            </Button>
             <button>
               <Link to="/cart" className="navlink">
                 <BsBag />
@@ -113,7 +118,6 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-  const { back } = useContext(TheamContext);
 
   return (
     <Stack direction={"row"} spacing={2}>
@@ -132,7 +136,6 @@ const DesktopNav = () => {
                 border={"0px"}
                 borderRadius={"0px"}
                 boxShadow={"xl"}
-                bg={back ? "black" : "white"}
                 p={4}
                 minW={"sm"}
               >

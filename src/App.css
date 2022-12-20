@@ -1,27 +1,18 @@
 
 .appnav{
     padding-top: 80px  ;  
-    background-color: rgb(37, 37, 37);
 } 
 
-.appnav>*{
-    background-color: rgb(37, 37, 37);
-} 
 
 .appnav2{
     margin-top: 80px;   
-    background-color: white;  
 }
 
-.appnav2>*{
-    background-color: white; 
-}
 
 .navlink{
     margin: 0px 6px ; 
     font-family: sans-serif; 
     font-size: medium; 
-    color: black;  
 }
 
 .navlink:hover{
@@ -31,27 +22,14 @@
 .horizontal{
     margin: 10px 20px;  
     padding: 2px; 
-    background-color: rgb(245, 245, 245);  
     border: 1px solid rgb(216, 216, 216);  
     border-radius: 10px;    
 } 
 
-.background>*{
-    background-color: rgb(0, 0, 0);  
-    color: white;
+.allrout{
+    padding-top: 80px; 
 }
-.background *{ 
-    background-color: rgb(0, 0, 0);  
-    color: white;
-} 
 
-.background2>*{
-    background-color: rgb(255, 255, 255);  
-}
-.background2 *{
-    background-color: rgb(255, 255, 255);  
-    color: rgb(0, 0, 0); 
-}
 
 .sign{
     background-color: rgb(255, 255, 255) ; 

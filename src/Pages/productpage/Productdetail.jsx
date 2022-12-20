@@ -1,13 +1,11 @@
-import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { TheamContext } from "../../Context/TheamContext";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"; 
 import prod from "./product.module.css";
 
 export const Product = () => {
   const { name, id } = useParams({});
   const [product, setProduct] = useState({});
-  const [cart, setCart] = useState(true);
-  const { back } = useContext(TheamContext);
+  const [cart, setCart] = useState(true); 
 
   useEffect(() => {
     async function getData() {
@@ -34,16 +32,16 @@ export const Product = () => {
   console.log(id, name);
 
   return (
-    <div className={back ? `${prod.wht}` : `${prod.bak}`}>
-      <div className={cart ? `${prod.cartadd2}` : `${prod.cartadd}`}>
+    <div>
+      {cart ? <></> : (<div className={prod.carting}>
         <h1> Product Added to cart </h1>
-      </div>
+      </div>)}
       <div className={prod.container}>
         <div className={prod.container}>
           <img
             src={product.image}
             className={prod.imgs}
-            alt="some-thing-went-wrong" 
+            alt="some-thing-went-wrong"
           />
         </div>
         <div className={prod.containerdetail}>

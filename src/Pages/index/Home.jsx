@@ -1,29 +1,46 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Carousel from "./Carousel"; 
-// import { Footer } from "../footer/footer"
+import Carousel from "./Carousel";
+import ind from "./index.module.css";
 
-export const Home=()=>{
+export const Home = () => {
   return (
     <div className="Container">
-      <Banner>
-        <img src="https://i.imgur.com/b58QpQo.png" alt="" />
-      </Banner> 
-      <GridImgs>
+      <div className={ind.Banner}>
+        <img src="https://i.imgur.com/b58QpQo.png" className={ind.cx} alt="" />
+      </div>
+      <div className={ind.GridImgs}>
         <img src="https://www.jcrew.com/brand_creative/homepage2022/15-Dec4/2022dec2_1213_hp_w_img1_new.jpg" alt="j1" />
         <img src="https://www.jcrew.com/brand_creative/homepage2022/15-Dec4/2022dec2_1213_hp_w_img2_new.jpg" alt="j2" />
         <img src="https://www.jcrew.com/brand_creative/homepage2022/15-Dec4/2022dec2_1213_hp_w_img3.jpg" alt="j3" />
         <img src="https://www.jcrew.com/brand_creative/homepage2022/15-Dec4/2022dec2_1213_hp_w_img4.jpg" alt="j4" />
         <img src="https://www.jcrew.com/brand_creative/homepage2022/15-Dec4/2022dec2_1213_hp_w_img5.jpg" alt="j5" />
         <img src="https://www.jcrew.com/brand_creative/homepage2022/15-Dec4/2022dec2_1213_hp_w_img6.jpg" alt="j6" />
-      </GridImgs>
-      <Buttons>
-        <h1>Shop New Arrivals</h1> 
-        <button>Shop Women</button>
-        <button>Shop Men</button>
-        <button>Shop Girls</button>
-        <button>Shop Boys</button>
-      </Buttons>
+      </div>
+      <div className={ind.Buttons}>
+        <h1>Shop New Arrivals</h1>
+        <button>
+          <Link to="/forwomen" >
+            Shop Women
+          </Link>
+        </button>
+        <button>
+          <Link to="/formen">
+            Shop Men
+          </Link>
+        </button>
+        <button>
+          <Link to="/forgirl">
+            Shop Girls
+          </Link>
+        </button>
+        <button>
+          <Link to="/forboys">
+            Shop Boys
+          </Link>
+        </button>
+      </div>
       <PinkDiv>
         <img
           className="logo-p"
@@ -36,7 +53,7 @@ export const Home=()=>{
               src="https://www.jcrew.com/brand_creative/homepage2022/11-Nov/2022nov_1025_hp_w_img12.jpg"
               alt=""
             />
-            <p>Creative Spirits Series</p> 
+            <p>Creative Spirits Series</p>
             <h1>Marie Marot X J.Crew</h1>
             <button>Shop our collab</button>
           </div>
@@ -46,7 +63,7 @@ export const Home=()=>{
               alt=""
             />
             <p>That fall feeling</p>
-            <h1> Layer love with Marjon Carlos </h1> 
+            <h1> Layer love with Marjon Carlos </h1>
             <button>Shop our collab</button>
           </div>
           <div className="d-card">
@@ -97,7 +114,7 @@ export const Home=()=>{
           </div>
         </div>
       </PinkDiv>
-      <Carousel /> 
+      <Carousel />
       <More>
         <h2>More you need to see</h2>
         <div className="card-con">
@@ -150,65 +167,14 @@ export const Home=()=>{
   );
 }
 
-const Banner = styled.div`
-  width: 95%;
-  /* border:1px solid; */
-  margin: auto;
-  /* border: 1px solid red; */
-  img {
-    cursor: pointer;
-    margin: auto;
-    width: 100%;
-  }
-`;
 
-const GridImgs = styled.div`
-  width: 70%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin: auto;
-  margin-top: 50px;
-  cursor: pointer;
-  img {
-    width: 100%;
-  }
-`;
-const Buttons = styled.div`
-  h1 {
-    font-weight: lighter;
-  }
-  width: 60%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: "EB Garamond", serif;
-  /* border: 1px solid red; */
-  margin-top: 30px;
-
-  /* margin-left: 20%; */
-  button {
-    border: 1px solid black;
-    background-color: white;
-    height: 40px;
-    width: 140px;
-    font-size: 15px;
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: "DM Sans", sans-serif;
-    letter-spacing: 1px;
-    &:hover {
-      background-color: gray;
-      color: white;
-    }
-  }
-`;
 
 const PinkDiv = styled.div`
   width: 85%;
   background-color: #e7c9c1;
   margin: auto;
+  padding: 10px 0; 
+  color: black; 
   margin-top: 40px;
   padding-bottom: 50px;
   .logo-p {
@@ -271,11 +237,10 @@ const PinkDiv = styled.div`
   }
   .card {
     width: 22%;
-    font-family: "EB Garamond", serif;
-    margin-top: -25px;
-    /* display: flex;
+    font-family: "EB Garamond", serif; 
+    display: flex;
     flex-direction: column;
-    justify-content: space-around; */
+    justify-content: space-around; 
     & h3 {
       font-weight: lighter;
       font-size: 18px;
@@ -296,6 +261,7 @@ const PinkDiv = styled.div`
     width: 100%;
   }
 `;
+
 const More = styled.div`
   width: 95%;
   padding-top: 20px;

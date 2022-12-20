@@ -41,9 +41,9 @@ const Cart = () => {
 
   return (
     <div className={Cartmod.cart}>
-      <h4> Have a question? We can help. </h4>
+      <h4 className={Cartmod.col}> Have a question? We can help. </h4>
       <div>
-        <h4> Unfortunately, your order will not arrive by 12/24. </h4>
+        <h4 className={Cartmod.col}> Unfortunately, your order will not arrive by 12/24. </h4>
       </div>
       <div
        className={Cartmod.main}
@@ -61,29 +61,26 @@ const Cart = () => {
               <td> PRICE </td>
             </tr>
             {data.map((e, i) => (
-              <tr key={e.id}>
-                <td>
-                  {" "}
-                  <img src={e.image} alt="img" />{" "}
+              <tr key={e.id} >
+                <td> 
+                  <img src={e.image} alt="img" />
                 </td>
-                <td>
-                  {" "}
+                <td> 
                   <h3> {e.name} </h3>
-                  <h4> Item: {e.item} </h4>
-                  <h4> Rating: {e.rating} </h4>
+                  <h4 className={Cartmod.col} > Item: {e.item} </h4>
+                  <h4 className={Cartmod.col}> Rating: {e.rating} </h4>
                   <button
                     className={Cartmod.del}
                     onClick={() => {
                       handleDelete(i);
                     }}
-                  >
-                    {" "}
-                    Remove{" "}
+                  > 
+                    Remove
                   </button>
                 </td>
                 <th>INR: {e.price}</th>
               </tr>
-            ))}
+            ))} 
           </table>
         </div>
         <div 
@@ -103,15 +100,15 @@ const Cart = () => {
               <td> {price == 0 ? 0 : `${price + 100}`} </td>
             </tr>
           </table>
-          <p> Shipping calculated in Checkout </p>
+          <p className={Cartmod.p}> Shipping calculated in Checkout </p>
           <button 
           className={Cartmod.paybutt} 
           onClick={HandlePayment}>
             
             <Link to="/payment"> CHECKOUT </Link>
           </button>
-          <h3> Checkout with ESW </h3>
-          <p>
+          <h3 className={Cartmod.h3}> Checkout with ESW </h3>
+          <p className={Cartmod.p}>
             
             By clicking 'Check Out Now', you will be redirected to the ESW
             checkout page where payment will be taken and your order fulfilled
@@ -122,7 +119,7 @@ const Cart = () => {
       <div 
       className={Cartmod.bottomtotal}
       >
-        <h2>Total:₹{price == 0 ? 0 : `${price + 100}`}</h2>
+        <h2 className={Cartmod.h2}>Total:₹{price == 0 ? 0 : `${price + 100}`}</h2>
         <button className={Cartmod.paybutt} onClick={HandlePayment}>
             <Link to="/payment"> CHECKOUT </Link>
           </button>

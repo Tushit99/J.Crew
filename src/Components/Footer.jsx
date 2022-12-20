@@ -9,10 +9,12 @@ import {
     Tag,
     Image,
     Input,
+    useColorMode,
     useColorModeValue,
 } from '@chakra-ui/react'; 
 import "./Footer.css" 
 import Logo from "../Image/mylogo.png"; 
+import Logo2 from "../Image/mylogo2.png"; 
 
 
 const ListHeader = ({ children }) => {
@@ -23,11 +25,11 @@ const ListHeader = ({ children }) => {
     );
 };
 
-export default function Footer() {
+export default function Footer() { 
+    const { colorMode } = useColorMode()
+
     return (
-        <Box
-            bg={useColorModeValue('white')}
-            color={useColorModeValue('gray.700', 'gray.200')}>
+        <Box >
             <Container as={Stack} maxW={'8xl'} py={10}>
                 <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
                     <Stack align={'flex-start'}>
@@ -38,9 +40,10 @@ export default function Footer() {
                             <Link href={'#'}>Track Order</Link>
                             <Tag
                                 size={'sm'}
-                                bg={useColorModeValue('green.300', 'green.800')}
+                                // bg={useColorModeValue('green.300', 'green.800')}
                                 ml={2}
-                                color={'white'}>
+                                // color={'white'}
+                                >
                                 New
                             </Tag>
                         </Stack>
@@ -88,12 +91,12 @@ export default function Footer() {
                         borderBottom: '1px solid',
                         borderColor: useColorModeValue('gray.200', 'gray.700'),
                         flexGrow: 1,
-                        ml: 8,
+                        ml: 8, 
                     }}>
-                    <Image
+                    <Image 
                         h={{ base: '40px', sm: '50px', lg: '80px' }} 
                         w={{ base: '120px', sm: '120px', lg: '260px' }}
-                        src={Logo}
+                        src={colorMode === 'light' ? `${Logo}`: `${Logo2}`}
                     /> 
                 </Flex>
                 <Text pt={6} fontSize={'sm'} ml={"100px"} textAlign={'left'}>
