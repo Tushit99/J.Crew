@@ -46,10 +46,10 @@ export default function Navbar() {
         <Flex 
           minH={"50px"}
           px={{ base: 4 }}
-          borderBottom={0}
+          borderBottom={0} 
           borderStyle={"solid"}
           borderColor={useColorModeValue("gray.200", "gray.900")}
-          align={"center"}
+          align={"center"} 
         >
           <Flex
             flex={{ base: 1, md: "auto" }}

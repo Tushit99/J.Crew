@@ -23,9 +23,10 @@
 }
 
 .Buttons {
-  width: 60%;
+  width: 70%;
   margin: auto;
-  display: flex;
+  display: flex; 
+  flex-wrap: wrap; 
   justify-content: space-between;
   align-items: center;
   font-family: sans-serif;
@@ -60,3 +61,8 @@
 
 /*  */ 
 
+@media all and (max-width: 900px) {
+  .GridImgs{
+    grid-template-columns: repeat(1,1fr); 
+  }
+}
