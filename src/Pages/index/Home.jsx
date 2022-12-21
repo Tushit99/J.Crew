@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Carousel from "./Carousel";
 import ind from "./index.module.css";
 
-export const Home = () => {
+export const Home = () => { 
+
   return (
     <div className="Container">
       <div className={ind.Banner}>
@@ -118,7 +119,7 @@ export const Home = () => {
       <More>
         <h2>More you need to see</h2>
         <div className="card-con">
-          <div className="m-card">
+          <div className="m-card">  
             <img
               src="https://www.jcrew.com/s7-img-facade/BH290_BL8486_m?wid=416"
               alt=""
@@ -184,14 +185,16 @@ const PinkDiv = styled.div`
   }
   .flex {
     display: flex;
-    text-align: start;
+    text-align: start; 
+    flex-wrap: wrap; 
     justify-content: space-around;
     /* border: 1px solid white; */
     width: 100%;
     margin: auto;
   }
   .d-mid {
-    display: flex;
+    display: flex; 
+    flex-wrap: wrap;
     justify-content: space-around;
     width: 80%;
     /* border: 1px solid black; */
@@ -236,9 +239,10 @@ const PinkDiv = styled.div`
     }
   }
   .card {
-    width: 22%;
+    width: 22%;  
     font-family: "EB Garamond", serif; 
-    display: flex;
+    display: flex; 
+    flex-wrap: wrap; 
     flex-direction: column;
     justify-content: space-around; 
     & h3 {
@@ -287,12 +291,14 @@ const More = styled.div`
 
   .card-con {
     display: flex;
-    margin: auto;
+    margin: auto; 
+    flex-wrap: wrap; 
     justify-content: space-evenly;
     /* border: 1px solid red; */
   }
   .m-card {
-    width: 15%;
+    width: 100px;  
+    margin: 10px 0;
     cursor: pointer;
   }
   .m-card img {

@@ -10,7 +10,8 @@
 
 
 .navlink{
-    margin: 0px 6px ; 
+    margin: 0px 6px ;  
+    color: unset; 
     font-family: sans-serif; 
     font-size: medium; 
 }
