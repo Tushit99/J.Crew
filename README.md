@@ -23,13 +23,18 @@ J.Crew Group, Inc., is an American multi-brand, specialty retailer. The company 
 <br/>
 <br/>
 
-In the project directory:   
+
+## Tech Stack: 
+ React | json-server | HTML | CSS | Javascript 
+
+## In the project directory:   
 
 to get started it should run this in terminal 
 &&: `npm start`
 
-to run my data on server  
-`json-server db.json --port 8080` 
+to run my data on server run this in terminal 
+&&: `json-server db.json --port 8080` 
+
 
 
 
