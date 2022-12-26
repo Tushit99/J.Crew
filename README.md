@@ -29,7 +29,7 @@ to get started it should run this in terminal
 &&: `npm start`
 
 to run my data on server  
-&&: `json-server db.json --port 8080` 
+`json-server db.json --port 8080` 
 
 
 
