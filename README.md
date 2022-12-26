@@ -13,7 +13,8 @@ J.Crew Group, Inc., is an American multi-brand, specialty retailer. The company 
 <br/> 
 
 ## Features: 
-- Landing page
+- Landing page  
+- Dark Mode  
 - Social sign-in/sign-up
 - Product section
 - Sort products
