@@ -7,7 +7,20 @@ J.Crew Group, Inc., is an American multi-brand, specialty retailer. The company 
 ![MensPage](./src/Image/mespage.png?raw=true) 
 ![DarkMode](./src/Image/DarkMode.png?raw=true)
 ![Preview](./src/Image/Jcrew.png?raw=true)
-![Cart](./src/Image/Cart.png?raw=true)
+![Cart](./src/Image/Cart.png?raw=true) 
+
+<br/> 
+<br/> 
+
+## Features: 
+- Landing page
+- Social sign-in/sign-up
+- Product section
+- Sort products
+- Add to wishlist 
+
+<br/>
+<br/>
 
 In the project directory:   
 
