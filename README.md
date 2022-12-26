@@ -2,11 +2,17 @@ J.Crew project clone:
 
 J.Crew Group, Inc., is an American multi-brand, specialty retailer. The company offers an assortment of women's, men's, and children's apparel and accessories, including swimwear, outerwear, lounge-wear, bags, sweaters, denim, dresses, suiting, jewelry, and shoes.  
 
-![Home](./src/Image/Home.png?raw=true)
-![Login](./src/Image/Loginpage.png?raw=true)
-![MensPage](./src/Image/mespage.png?raw=true) 
-![DarkMode](./src/Image/DarkMode.png?raw=true)
-![Preview](./src/Image/Jcrew.png?raw=true)
+## Home
+![Home](./src/Image/Home.png?raw=true) 
+## Login 
+![Login](./src/Image/Loginpage.png?raw=true) 
+## MensPage 
+![MensPage](./src/Image/mespage.png?raw=true)  
+## DarkMode 
+![DarkMode](./src/Image/DarkMode.png?raw=true) 
+## Preview 
+![Preview](./src/Image/Jcrew.png?raw=true) 
+## Cart 
 ![Cart](./src/Image/Cart.png?raw=true) 
 
 <br/> 
