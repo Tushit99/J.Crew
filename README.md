@@ -29,9 +29,11 @@ J.Crew Group, Inc., is an American multi-brand, specialty retailer. The company 
 <br/>
 <br/>
 
-
 ## Tech Stack: 
- React | json-server | HTML | CSS | Javascript 
+ React | json-server | HTML | CSS | Javascript  
+ 
+## End Notes 📑
+In this project, I tried to achieve a near-perfect clone of the original website as much as possible with very limited knowledge of React. This entire journey of this has given me experiences and I have learned lots of things by applying to the real website and it gave me a lot of confidence. More products can be added if I have more time.
 
 ## In the project directory:   
 
