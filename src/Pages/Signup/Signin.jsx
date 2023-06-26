@@ -24,7 +24,7 @@ export default function Signin() {
 
   useEffect(() => {
     async function detail() {
-      let res = await fetch(`http://localhost:8080/user`);
+      let res = await fetch(`https://fiver-ox6s.onrender.com/user`);
       let x = await res.json();
       setData(x);
     }

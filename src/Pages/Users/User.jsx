@@ -14,7 +14,7 @@ const User = () => {
 
   useEffect(() => {
     async function detail(na) {
-      let res = await fetch(`http://localhost:8080/${na}`);
+      let res = await fetch(`https://fiver-ox6s.onrender.com/${na}`);
       let x = await res.json();
       setData(x);
     }
@@ -32,7 +32,7 @@ const User = () => {
       price: `${price}`,
       productdescription: { textarea },
     }
-    let res = await fetch(`http://localhost:8080/${type}`,
+    let res = await fetch(`https://fiver-ox6s.onrender.com/${type}`,
       {
         method: "POST",
         body: JSON.stringify(obj),
@@ -44,7 +44,7 @@ const User = () => {
 
 
   const handleDelete = async (dataName, dataid) => {
-    let res = await fetch(`http://localhost:8080/${dataName}/${dataid}`, {
+    let res = await fetch(`https://fiver-ox6s.onrender.com/${dataName}/${dataid}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

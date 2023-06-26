@@ -14,7 +14,7 @@ const Forboys = () => {
     setTimeout(()=>{
       async function detail(page) {
         let res = await fetch(
-          `http://localhost:8080/forboys?_page=${page}&_limit=9`
+          `https://fiver-ox6s.onrender.com/forboys?_page=${page}&_limit=9`
         );
         let x = await res.json();
         setData(x);
@@ -28,7 +28,7 @@ const Forboys = () => {
     setLoading(true);
     async function detail(z) {
       let res = await fetch(
-        `http://localhost:8080/forboys?_page=${page}&_limit=9`
+        `https://fiver-ox6s.onrender.com/forboys?_page=${page}&_limit=9`
       );
       let x = await res.json();
       if (z === "asc") {
@@ -52,7 +52,7 @@ const Forboys = () => {
     setLoading(true);
     async function detail() {
       let res = await fetch(
-        `http://localhost:8080/forboys?_page=${page}&_limit=9`
+        `https://fiver-ox6s.onrender.com/forboys?_page=${page}&_limit=9`
       );
       let x = await res.json();
       x = x.sort((a, b) => { return b.rating - a.rating })

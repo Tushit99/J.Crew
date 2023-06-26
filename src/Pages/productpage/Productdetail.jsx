@@ -9,7 +9,7 @@ export const Product = () => {
 
   useEffect(() => {
     async function getData() {
-      const data = await fetch(`http://localhost:8080/${name}/${id}`).then(
+      const data = await fetch(`https://fiver-ox6s.onrender.com/${name}/${id}`).then(
         (d) => d.json()
       );
       setProduct(data);

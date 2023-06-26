@@ -46,7 +46,7 @@ export default function Signup() {
             }, 2000); 
         } 
         else {
-            let res = await fetch(`http://localhost:8080/user`,
+            let res = await fetch(`https://fiver-ox6s.onrender.com/user`,
                 {
                     method: "POST",
                     body: JSON.stringify(obj),
